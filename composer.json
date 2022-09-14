@@ -1,0 +1,24 @@
+{
+  "name": "ramzinex/php",
+  "type": "library",
+  "description": "A PHP wrapper for Ramzinex's API",
+  "keywords": ["ramzinex", "api"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "ramzinex",
+      "email": "test@ramzinex.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ramzinex\\": "src/"
+    }
+  },
+  "minimum-stability" : "stable"
+}
