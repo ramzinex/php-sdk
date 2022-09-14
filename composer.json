@@ -3,6 +3,7 @@
   "type": "library",
   "description": "A PHP wrapper for Ramzinex's API",
   "keywords": ["ramzinex", "api"],
+  "homepage": "https://github.com/ramzinex/php-sdk",
   "license": "MIT",
   "authors": [
     {
