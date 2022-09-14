@@ -1,6 +1,6 @@
 <?php
 
-namespace Ramzinex;
+namespace ramzinex;
 
 
 class RamzinexApi
@@ -33,8 +33,8 @@ class RamzinexApi
 
         $headers = array(
             'Accept: application/json',
-            'Content-Type: application/x-www-form-urlencoded',
             'charset: utf-8',
+            'Content-Type: application/json'
         );
         if ($this->token != null && $private == true) {
             $headers[] = 'Authorization: Bearer ' . $this->token;
@@ -53,8 +53,8 @@ class RamzinexApi
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_setopt($ch, CURLOPT_VERBOSE, true);
         if ($post == true) {
-            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
             curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 
         } else {
             curl_setopt($ch, CURLOPT_POST, false);
@@ -130,7 +130,19 @@ class RamzinexApi
      */
     public function setLimitOrder($pairId, $amount, $price, $type)
     {
-        return $this->execute('https://ramzinex.com/exchange/api/v1.0/exchange/users/me/orders/limit', true, true, ['pair_id' => $pairId, 'amount' => $amount, 'price' => $price, 'type' => $type]);
+        return $this->execute('https://ramzinex.com/exchange/api/v1.0/exchange/users/me/orders/limit/', true, true, ['pair_id' => $pairId, 'amount' => $amount, 'price' => $price, 'type' => $type]);
+    }
+
+    /**
+     * ارسال سفارش بازار *
+     * @param $pairId
+     * @param $amount
+     * @param $type |buy,sell|
+     * @return mixed
+     */
+    public function setMarketOrder($pairId, $amount, $type)
+    {
+        return $this->execute('https://ramzinex.com/exchange/api/v1.0/exchange/users/me/orders/market/', true, true, ['pair_id' => $pairId, 'amount' => $amount, 'type' => $type]);
     }
 
     /**

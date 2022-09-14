@@ -7,7 +7,7 @@
   "authors": [
     {
       "name": "ramzinex",
-      "email": "test@ramzinex.com"
+      "email": "Tech@ramzinex.com"
     }
   ],
   "require": {
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Ramzinex\\": "src/"
+      "ramzinex\\": "src/"
     }
   },
   "minimum-stability" : "stable"
