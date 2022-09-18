@@ -1,5 +1,5 @@
 {
-  "name": "ramzinex-php",
+  "name": "ramzinex",
   "type": "library",
   "description": "A PHP wrapper for Ramzinex's API",
   "keywords": ["ramzinex", "api"],
