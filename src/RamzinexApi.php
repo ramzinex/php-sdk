@@ -295,5 +295,26 @@ class RamzinexApi
         return $this->execute('https://ramzinex.com/exchange/api/v1.0/exchange/users/me/funds/withdraws/' . $withdrawId, false,true);
     }
 
+    /**
+     * مشخصات یک ارز *
+     * @param $currencyId
+     * @return array
+     */
+    public function getCurrency($currencyId = null)
+    {
+        return $this->execute('https://publicapi.ramzinex.com/exchange/api/v1.0/exchange/currencies/' . $currencyId, false, true);
+
+    }
+
+    /**
+     * لیست ارزها *
+     * @param $currencyId
+     * @return array
+     */
+    public function getCurrencies()
+    {
+        return $this->execute('https://publicapi.ramzinex.com/exchange/api/v1.0/exchange/currencies', false, true);
+
+    }
 }
 
